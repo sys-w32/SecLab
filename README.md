@@ -24,7 +24,6 @@ Primary Goals:
 - Wi-Fi: UniFi U6+ AP (PoE) + Unifi Controller
 - Monitoring/SIEM: Wazuh (Manager/Indexer/Dashboard + Agents)
 
-  ## VLANs (Current)
   ## VLANs (current)
 | VLAN | Name            | Subnet (example)        | Purpose |
 |-----:|-----------------|--------------------------|---------|
@@ -32,5 +31,19 @@ Primary Goals:
 | 20   | Guest           | 192.168.20.0/24          | Guest Wi-Fi, heavily restricted |
 | 30   | IoT             | 192.168.30.0/24          | IoT devices, restricted egress |
 | 40   | Monitoring      | 10.40.0.0/24             | Wazuh/SOC tooling |
-| 50   | Windows/Test    | 10.50.0.0/24           | Windows endpoints/test range |
+| 50   | Windows/Test    | 10.50.0.0/24             | Windows endpoints/test range |
 | 60   | UniFi-Management| 192.168.60.0/24          | UniFi management plane |
+
+## Proxmox bridges (current model)
+- vmbr0: WAN (pfSense WAN)
+- vmbr1: LAN trunk for VLANs 10/20/30/40/50 (tagged)
+- vmbr2: dedicated management bridge for VLAN 60 (UniFi mgmt isolation)
+
+## Conventions
+- Use aliases in pfSense for network objects and port groups.
+- Document every change as either:
+  - a runbook update (repeatable procedure), or
+  - a troubleshooting entry (symptoms → root cause → fix → prevention)
+
+## Changelog
+See `CHANGELOG.md`.

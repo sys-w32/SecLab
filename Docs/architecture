@@ -15,6 +15,14 @@ This lab is designed as a segmented environment where pfSense is the control pla
 - pfSense logs → Wazuh (firewall/DNS/NAT insight)
 - UniFi events → Wazuh (client associations, admin actions, device events)
 
+## Port Mapping
+- Host NIC: Intel i350-T4 Quad-Port
+- Port Map
+  - Port 0: n/a
+  - Port 1: Laptop LAN Connection ( Will change later )
+  - Port 2: Unifi U6+ PoE AP (vmbr2)
+  - Port 3: Homeplug > Router 
+
 ## Diagram (Mermaid)
 ```mermaid
 flowchart LR

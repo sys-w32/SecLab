@@ -1,4 +1,4 @@
-# TSH-001: pfSense Syslog Integration with Wazuh Manager
+# TSH-006: pfSense Syslog Integration with Wazuh Manager
 
 ## Overview
 This document details the procedure for troubleshooting and successfully forwarding pfSense system and firewall logs to a Wazuh Manager via standard Syslog (UDP port 514).

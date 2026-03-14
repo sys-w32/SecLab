@@ -27,16 +27,15 @@ This lab is designed as a segmented environment where pfSense is the control pla
 ```mermaid
 flowchart LR
   ISP((ISP Router/Modem)) -->|WAN| PVE[Proxmox VE]
-  PVE -->|vmbr0 (WAN)| PFS[pfSense VM]
+  PVE -->|"vmbr0 (WAN)"| PFS[pfSense VM]
 
-  PVE -->|vmbr1 (LAN trunk)| PFS
-  PVE -->|vmbr2 (VLAN60 mgmt)| PFS
+  PVE -->|"vmbr1 (LAN trunk)"| PFS
+  PVE -->|"vmbr2 (VLAN60 mgmt)"| PFS
 
-  PFS -->|VLAN10/20/30/40/50 gateways| NETS[(VLAN Networks)]
+  PFS -->|"VLAN10/20/30/40/50 gateways"| NETS[(VLAN Networks)]
   NETS --> UCTRL[UniFi Controller]
   UCTRL --> UAP[UniFi U6+ AP]
 
   NETS --> WAZ[Wazuh Manager/Indexer/Dashboard]
   NETS --> WIN[Windows VMs/Hosts]
   NETS --> LNX[Linux VMs/Hosts]
-```

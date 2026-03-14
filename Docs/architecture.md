@@ -39,3 +39,4 @@ flowchart LR
   NETS --> WAZ[Wazuh Manager/Indexer/Dashboard]
   NETS --> WIN[Windows VMs/Hosts]
   NETS --> LNX[Linux VMs/Hosts]
+```
